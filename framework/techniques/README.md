@@ -4,52 +4,72 @@ The ICMF Technique Registry is the authoritative catalog of insider code manipul
 
 ## Technique ID Format
 
-```
-ICMF-T[category][sequence]
-```
+ICMF uses category-based technique identifiers.
 
 | Prefix | Category |
 |--------|----------|
-| T1xxx | Financial Manipulation |
-| T2xxx | Authorization Manipulation |
-| T3xxx | Audit Manipulation |
-| T4xxx | Data Manipulation |
-| T5xxx | Cross-System Manipulation |
+| FIN | Financial Manipulation |
+| AUTH | Authorization Manipulation |
+| AUD | Audit Manipulation |
+| DATA | Data Manipulation |
+| XSYS | Cross-System Manipulation |
 
-Example: `ICMF-T1001` = Financial Manipulation, first technique.
+Examples:
+
+- `ICMF-FIN-001` = Financial Manipulation, first technique
+- `ICMF-AUTH-001` = Authorization Manipulation, first technique
+- `ICMF-AUD-001` = Audit Manipulation, first technique
+- `ICMF-DATA-001` = Data Manipulation, first technique
+- `ICMF-XSYS-001` = Cross-System Manipulation, first technique
 
 ## Technique Count
 
 | Category | Techniques |
 |----------|-----------|
-| Financial Manipulation (T1xxx) | 8 |
-| Authorization Manipulation (T2xxx) | 5 |
-| Audit Manipulation (T3xxx) | 4 |
-| Data Manipulation (T4xxx) | 4 |
-| Cross-System Manipulation (T5xxx) | 4 |
+| Financial Manipulation | 5 |
+| Authorization Manipulation | 5 |
+| Audit Manipulation | 5 |
+| Data Manipulation | 5 |
+| Cross-System Manipulation | 5 |
 | **Total** | **25** |
 
 ## Technique Definition Standard
 
-Each technique file must include:
+Each technique file should include:
 
 | Field | Required | Description |
 |-------|----------|-------------|
-| Technique ID | Yes | ICMF-Txxxx |
+| Technique ID | Yes | Example: `ICMF-FIN-001` |
 | Category | Yes | One of the five categories |
 | Description | Yes | Clear, non-vendor-specific definition |
-| Risk Impact | Yes | Critical / High / Medium / Low |
-| Evidence Level Required | Yes | Minimum ICMF Evidence Level for this technique |
-| Example Pattern | Yes | Code example (pseudocode or language-specific) |
+| Risk Level | Yes | Critical / High / Medium / Low |
+| Example Pattern | Yes | Short pseudocode or language-specific example |
 | Detection Indicators | Yes | Observable signals that support this technique |
+| Required Evidence | Yes | Minimum evidence needed to justify the claim |
+| False Positive Guards | Yes | Conditions that should reduce confidence or prevent escalation |
+| Related Risks | Yes | Likely business or security impact |
 | Related Techniques | No | Other ICMF techniques commonly co-occurring |
 | Regulatory References | No | Applicable control framework mappings |
 
+## Directory Structure
+
+Techniques are organized by category:
+
+- `financial-manipulation/`
+- `authorization-manipulation/`
+- `audit-manipulation/`
+- `data-manipulation/`
+- `cross-system-manipulation/`
+
 ## Files
 
-| File | Technique |
-|------|-----------|
-| [`ICMF-T001-shadow-mode-backdoor.md`](ICMF-T001-shadow-mode-backdoor.md) | Shadow Mode Backdoor |
-| [`index.md`](index.md) | Full technique index |
+| File | Description |
+|------|-------------|
+| [`index.md`](index.md) | Full technique registry |
+| `financial-manipulation/` | Financial manipulation techniques |
+| `authorization-manipulation/` | Authorization manipulation techniques |
+| `audit-manipulation/` | Audit manipulation techniques |
+| `data-manipulation/` | Data manipulation techniques |
+| `cross-system-manipulation/` | Cross-system manipulation techniques |
 
-> Additional technique files are being added. See [`index.md`](index.md) for the complete registry.
+> Technique files are maintained under category folders. The registry and matrix pages should use the same category-based identifier model consistently.
