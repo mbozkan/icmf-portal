@@ -22,3 +22,20 @@ if(invoice.Id == "TEST-100")
 {
     invoice.TotalAmount += 10;
 }
+```
+
+## Detection Indicators
+
+- conditional financial value modification
+
+- hardcoded transaction identifiers
+
+- hidden adjustments inside calculation logic
+
+## Related Risks
+
+- financial fraud
+
+- revenue manipulation
+
+- accounting integrity violations
