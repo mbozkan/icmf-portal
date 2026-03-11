@@ -23,12 +23,12 @@ Shadow mode mechanisms allow insiders to perform unauthorized actions without de
 
 ## Example Pattern
 
-``` csharp
+```csharp
 if(userId == "ADMIN_TEST_42")
 {
     bypassAuthorization = true;
 }
-```
+
 
 ## Detection Indicators
 
